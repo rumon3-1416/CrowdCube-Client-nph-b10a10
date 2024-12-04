@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "01",
+    "image": "https://plus.unsplash.com/premium_photo-1664475561761-849e7871e0b9?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": "Support John’s Medical Treatment",
+    "type": "personal issue",
+    "description": "John is undergoing critical medical treatment and needs help to cover hospital expenses. Every contribution matters.",
+    "minimumDonation": 10,
+    "deadline": "2024-12-31"
+  },
+  {
+    "_id": "02",
+    "image": "https://img.freepik.com/premium-photo/eco-friendly-sustainable-water-bottle-made-from-bamboo-generative-ai_601748-52900.jpg",
+    "title": "Innovative Eco-Friendly Water Bottle",
+    "type": "startup",
+    "description": "Help us launch a reusable, eco-friendly water bottle that tracks your hydration levels.",
+    "minimumDonation": 15,
+    "deadline": "2025-01-15"
+  },
+  {
+    "_id": "03",
+    "image": "https://images.pexels.com/photos/13812367/pexels-photo-13812367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "title": "Filming an Indie Sci-Fi Movie",
+    "type": "creative ideas",
+    "description": "We're making a low-budget sci-fi movie with a unique storyline. Support independent cinema!",
+    "minimumDonation": 20,
+    "deadline": "2024-12-20"
+  },
+  {
+    "_id": "04",
+    "image": "https://images.stockcake.com/public/6/1/0/6107f463-d33d-49e2-9944-0f413e13750c_large/quaint-bakery-shop-stockcake.jpg",
+    "title": "Local Bakery Expansion",
+    "type": "business",
+    "description": "Our family-run bakery needs your support to buy new equipment and expand our menu.",
+    "minimumDonation": 5,
+    "deadline": "2024-12-25"
+  },
+  {
+    "_id": "05",
+    "image": "https://play-lh.googleusercontent.com/eQdFy_AtGpkmiaN-ihJ_XlDWkorJiXDiq3gh4-RdOUFWnstUDS3_aGHYGYcMIURMe6A=w2560-h1440-rw",
+    "title": "AI-Powered Language Learning App",
+    "type": "startup",
+    "description": "Join us in creating an app that makes language learning fun and effective using AI technology.",
+    "minimumDonation": 25,
+    "deadline": "2025-02-01"
+  },
+  {
+    "_id": "06",
+    "image": "https://clpvd.org/wp-content/uploads/2023/03/MTP-storytime-main-photo-1024x681.jpg",
+    "title": "Save the Community Library",
+    "type": "personal issue",
+    "description": "Help save our local library from closure and keep resources accessible to everyone in the neighborhood.",
+    "minimumDonation": 10,
+    "deadline": "2025-01-10"
+  },
+  {
+    "_id": "07",
+    "image": "https://www.museos.com/wp-content/uploads/2021/03/Louvre-Paris16-scaled.jpg",
+    "title": "Art Exhibit in Paris",
+    "type": "creative ideas",
+    "description": "Support a budding artist in showcasing their work at an international art exhibit in Paris.",
+    "minimumDonation": 30,
+    "deadline": "2024-12-28"
+  },
+  {
+    "_id": "08",
+    "image": "https://assets.newatlas.com/dims4/default/26598c6/2147483647/strip/true/crop/1619x1079+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Fhome-gift-guide-11.jpg",
+    "title": "Revolutionary Smart Home Device",
+    "type": "startup",
+    "description": "We’re designing a smart home device that integrates seamlessly with all appliances. Be part of this innovation!",
+    "minimumDonation": 50,
+    "deadline": "2025-03-01"
+  },
+  {
+    "_id": "09",
+    "image": "https://www.ekanwer.com/wp-content/uploads/2017/07/writing-tips-to-become-an-author-eKanwer.jpg",
+    "title": "Help Alex Publish Their First Book",
+    "type": "creative ideas",
+    "description": "Alex, an aspiring author, is raising funds to self-publish their first novel. Let’s make this dream a reality!",
+    "minimumDonation": 10,
+    "deadline": "2025-01-20"
+  },
+  {
+    "_id": "10",
+    "image": "https://lh4.googleusercontent.com/DyORMMVwY-0MOwmXQUzA7ueGkbrnMNRxghiu7IlHm51cr8UBVOJo5B1DXirdsU0eyc-6O5ReBYFIPTF2uX_HqTMY3T0wm1k0Y76vKzMxXRywVyvP7XRAlNt4k16VBzmMDtMwrA8EpoDY8lw01EcJhXSjdHveajpjupSWZ0DBdoOQzOQHNXQcTlHM2A",
+    "title": "Build a Shelter for Stray Animals",
+    "type": "personal issue",
+    "description": "Raise funds to build a shelter for stray animals in our community and provide them with food and care.",
+    "minimumDonation": 20,
+    "deadline": "2025-02-15"
+  }
+]

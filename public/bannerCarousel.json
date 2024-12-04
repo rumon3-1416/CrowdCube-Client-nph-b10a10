@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "01",
+    "image": "https://media.licdn.com/dms/image/v2/D4E12AQFt-co9T0FH7Q/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1698083632437?e=2147483647&v=beta&t=3iR44DDwXpiHY7VaZC-7z_3eP4GAH1u_X80L71RZ4_w",
+    "title": "Turn Dreams into Reality",
+    "description": "Help passionate individuals bring their visions to life by contributing to meaningful campaigns.",
+    "ctaText": "Explore Now"
+  },
+  {
+    "_id": "02",
+    "image": "https://kissflow.com/hubfs/Feature-Image-Business-Collaboration.jpg",
+    "title": "Empower Ideas, Transform Lives",
+    "description": "Join hands to support creative ideas, startups, and personal causes. Together, we make a difference.",
+    "ctaText": "Join Us"
+  },
+  {
+    "_id": "03",
+    "image": "https://img.freepik.com/premium-photo/rescue-gesture-black-white-human-hands-african-caucasian-hands-giving-helping-hand-another-woman-african-woman-hand_293990-2117.jpg",
+    "title": "Support What Matters",
+    "description": "From personal needs to groundbreaking startups, your support drives change and innovation.",
+    "ctaText": "Get Involved"
+  }
+]
