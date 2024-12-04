@@ -12,27 +12,26 @@ import userIcon from '../../assets/icons/user.png';
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
   const [isValidUrl, setIsValidUrl] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   const { user, darkTheme, setDarkTheme } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const img = new Image();
+  img.src = user?.photoURL;
   img.onload = () => setIsValidUrl(true);
   img.onerror = () => setIsValidUrl(false);
-  img.src = user?.photoURL;
 
   const handleTheme = () => {
-    document.body.style.backgroundColor = darkTheme ? '#f7f7f7' : '#303030';
+    document.body.style.backgroundColor = darkTheme ? '#f7f7f7' : '#121212';
     setDarkTheme(!darkTheme);
   };
 
   return (
     <div className="w-full fixed top-0 inset-x-0 z-10">
-      <div className="w-full">
+      <div className={`w-full ${darkTheme ? 'bg-darkTrans' : 'bg-lightTrans'}`}>
         <nav
-          className={`${
-            darkTheme ? 'bg-dark3' : 'bg-lightTrans'
-          } w-[95%] max-w-[1280px] backdrop-blur-md py-6 mx-auto flex justify-between items-center gap-2 relative`}
+          className={`w-[95%] max-w-[1280px] backdrop-blur-md py-6 mx-auto flex justify-between items-center gap-2 relative`}
         >
           <h2
             onClick={() => navigate('/')}
@@ -44,7 +43,7 @@ const Navbar = () => {
           </h2>
 
           <ul
-            className={`text-white bg-tealTrans md:bg-transparent backdrop-blur-md md:backdrop-blur-none font-medium py-8 md:py-0 rounded-xl overflow-hidden md:flex flex-col md:flex-row items-center gap-4 md:gap-2 lg:gap-4 xl:gap-8 absolute md:static inset-x-0 top-24 md:top-0 z-20 ${
+            className={`text-white bg-tealTrans md:bg-transparent backdrop-blur-md md:backdrop-blur-none md:text-sm lg:text-base font-medium py-8 md:py-0 rounded-xl overflow-hidden md:flex flex-col md:flex-row items-center gap-4 md:gap-2 lg:gap-4 xl:gap-8 absolute md:static inset-x-0 top-24 md:top-0 z-20 ${
               showNav ? 'flex' : 'hidden'
             }
             ${darkTheme ? 'md:text-lightTrans' : 'md:text-[#32443f]'}`}
@@ -64,13 +63,21 @@ const Navbar = () => {
             <li onClick={() => setShowNav(false)} className="text-nowrap">
               <NavLink to="/my_donation">My Donation</NavLink>
             </li>
+            {!user && (
+              <li
+                onClick={() => setShowNav(false)}
+                className="text-nowrap md:hidden"
+              >
+                <NavLink to="/signup">Register</NavLink>
+              </li>
+            )}
           </ul>
 
-          <div className="flex items-center gap-2 lg:gap-3">
+          <div className="flex items-center gap-2 lg:gap-3 relative">
             {/* Theme Button */}
             <button
               onClick={handleTheme}
-              className="bg-transparent w-12 h-12 p-0.5 bd-dark rounded-full"
+              className="bg-transparent w-12 h-12 p-2.5 bd-dark rounded-full"
             >
               <img
                 className="w-full h-full object-cover rounded-full"
@@ -83,6 +90,8 @@ const Navbar = () => {
               <>
                 <button
                   onClick={() => navigate('/dashboard')}
+                  onMouseOver={() => setShowProfile(true)}
+                  onMouseOut={() => setShowProfile(false)}
                   className="bg-transparent w-12 h-12 p-0.5 border-2 border-teal rounded-full"
                 >
                   <img
@@ -91,12 +100,31 @@ const Navbar = () => {
                     alt=""
                   />
                 </button>
-                {/* <button
-                  onClick={signOutUser}
-                  className="text-teal text-lg font-medium px-5 py-2 border-2 border-teal rounded-full hidden md:block"
+
+                {/* Profile Info */}
+                <div
+                  onMouseOver={() => setShowProfile(true)}
+                  onMouseOut={() => setShowProfile(false)}
+                  className={`p-2 top-10 right-2 absolute ${
+                    showProfile ? 'block' : 'hidden'
+                  }`}
                 >
-                  Log Out
-                </button> */}
+                  <div
+                    className={`text-center p-4 pb-5 rounded-lg shadow-md shadow-[#7b7b7b] ${
+                      darkTheme ? 'bg-dark4 text-light2' : 'bg-light2 text-dark'
+                    }`}
+                  >
+                    <h2 className="font-semibold text-nowrap">
+                      {user.displayName}
+                    </h2>
+                    <button
+                      onClick={() => signOutUser()}
+                      className="text-teal font-medium px-3 py-1 mt-3 border-2 border-teal rounded-full"
+                    >
+                      Log Out
+                    </button>
+                  </div>
+                </div>
               </>
             ) : (
               <>

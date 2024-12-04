@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Banner from './Banner/Banner';
 import MainLayout from '../../layouts/MainLayout';
+import HomeCampaigns from './HomeCampaigns/HomeCampaigns';
 
 const Home = () => {
   useEffect(() => {
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <MainLayout>
       <Banner />
+      <HomeCampaigns />
     </MainLayout>
   );
 };

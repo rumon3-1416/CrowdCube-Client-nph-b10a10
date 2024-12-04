@@ -20,7 +20,7 @@ const Banner = () => {
     fetch(`${serverUrl}/slides`)
       .then(res => res.json())
       .then(data => setOffersData(data));
-  }, []);
+  }, [serverUrl]);
 
   return (
     <section>
@@ -37,11 +37,12 @@ const Banner = () => {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           className="mySwiper"
         >
-          {offersData?.map(data => (
-            <SwiperSlide key={data._id}>
-              <Slide data={data} />
-            </SwiperSlide>
-          ))}
+          {offersData.length >= 2 &&
+            offersData?.map(data => (
+              <SwiperSlide key={data._id}>
+                <Slide data={data} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       )}
     </section>

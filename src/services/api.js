@@ -4,7 +4,7 @@ export const get = async url => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
   }
 };
 
@@ -20,7 +20,7 @@ export const post = async (url, doc) => {
 
     return res.json();
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
   }
 };
 
@@ -36,7 +36,7 @@ export const put = async (url, doc) => {
 
     return res.json();
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
   }
 };
 
@@ -52,7 +52,7 @@ export const patch = async (url, doc) => {
 
     return res.json();
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
   }
 };
 
@@ -64,6 +64,6 @@ export const del = async url => {
 
     return res.json();
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
   }
 };

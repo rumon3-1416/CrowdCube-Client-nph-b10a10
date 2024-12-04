@@ -15,6 +15,8 @@ export default {
         dark: '#0a0a0a',
         dark2: '#121212',
         dark3: '#303030',
+        dark4: '#424242',
+        darkTrans: '#303030b7',
       },
     },
   },
