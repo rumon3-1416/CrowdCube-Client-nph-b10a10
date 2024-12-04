@@ -1,10 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Slide = ({ data }) => {
   const { image, title, description, ctaText } = data;
-
-  const navigate = useNavigate();
 
   return (
     <div className="relative">
@@ -21,7 +18,14 @@ const Slide = ({ data }) => {
         <p className="w-[80%] max-w-[796px] text-sm sm:text-md md:text-lg font-medium mt-4 mb-0 lg:mb-4">
           {description}
         </p>
-        <button className="bg-green-400 px-4 py-1 rounded-full font-medium">
+        <button
+          onClick={() =>
+            document
+              .getElementById('campaigns')
+              ?.scrollIntoView({ behavior: 'smooth' })
+          }
+          className="bg-teal text-lg px-6 py-2 mt-6 rounded-full font-medium"
+        >
           {ctaText}
         </button>
       </div>

@@ -10,6 +10,7 @@ const AuthProvider = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const serverUrl = 'https://a10-server-eta.vercel.app';
 
   // On Auth State Changed
   useEffect(() => {
@@ -22,6 +23,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const contextValue = {
+    serverUrl,
     darkTheme,
     setDarkTheme,
     isLoading,

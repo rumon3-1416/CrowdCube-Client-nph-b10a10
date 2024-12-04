@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-
-import 'animate.css';
-import { useInView } from 'react-intersection-observer';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -12,29 +9,21 @@ import 'swiper/css/autoplay';
 
 import Slide from './Slide';
 import './carousel.css';
+import { AuthContext } from '../../../features/AuthProvider';
 
 const Banner = () => {
   const [offersData, setOffersData] = useState([]);
 
+  const { serverUrl } = useContext(AuthContext);
+
   useEffect(() => {
-    fetch('bannerCarousel.json')
+    fetch(`${serverUrl}/slides`)
       .then(res => res.json())
       .then(data => setOffersData(data));
   }, []);
 
-  const { ref, inView } = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
-
   return (
-    <section
-      ref={ref}
-      className={`slider-container ${
-        inView ? 'animate__animated animate__zoomIn' : ''
-      }`}
-      style={{ animationDelay: '0.5s' }}
-    >
+    <section>
       {offersData?.length > 2 && (
         <Swiper
           slidesPerView={1}

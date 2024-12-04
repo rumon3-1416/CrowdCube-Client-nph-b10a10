@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="w-full">
         <nav
           className={`${
-            darkTheme ? 'bg-dark3' : 'bg-light'
+            darkTheme ? 'bg-dark3' : 'bg-lightTrans'
           } w-[95%] max-w-[1280px] backdrop-blur-md py-6 mx-auto flex justify-between items-center gap-2 relative`}
         >
           <h2
@@ -67,6 +67,7 @@ const Navbar = () => {
           </ul>
 
           <div className="flex items-center gap-2 lg:gap-3">
+            {/* Theme Button */}
             <button
               onClick={handleTheme}
               className="bg-transparent w-12 h-12 p-0.5 bd-dark rounded-full"
@@ -98,36 +99,40 @@ const Navbar = () => {
                 </button> */}
               </>
             ) : (
-              <div className="hidden lg:flex items-center">
+              <>
+                {/* User */}
                 <button
                   onClick={() => navigate('/signin')}
-                  className="text-teal text-lg font-medium ps-5 xl:ps-9 pe-1.5 xl:pe-5 py-2 border-2 border-teal rounded-s-full"
+                  className={`${
+                    darkTheme ? 'bg-dark3' : 'bg-light2'
+                  } w-12 h-12 p-0.5 border-2 border-teal rounded-full lg:hidden`}
                 >
-                  Login
+                  <img
+                    className="w-full h-full object-cover rounded-full"
+                    src={userIcon}
+                    alt="profile"
+                  />
                 </button>
-                <button
-                  onClick={() => navigate('/signup')}
-                  className="bg-teal text-white text-lg font-medium ps-1.5 xl:ps-5 pe-5 xl:pe-9 py-2  border-2 border-teal rounded-e-full"
-                >
-                  Register
-                </button>
-              </div>
+
+                <div className="hidden lg:flex items-center">
+                  {/* Login */}
+                  <button
+                    onClick={() => navigate('/signin')}
+                    className="text-teal text-lg font-medium ps-5 xl:ps-9 pe-1.5 xl:pe-5 py-2 border-2 border-teal rounded-s-full"
+                  >
+                    Login
+                  </button>
+                  {/* Register */}
+                  <button
+                    onClick={() => navigate('/signup')}
+                    className="bg-teal text-white text-lg font-medium ps-1.5 xl:ps-5 pe-5 xl:pe-9 py-2  border-2 border-teal rounded-e-full"
+                  >
+                    Register
+                  </button>
+                </div>
+              </>
             )}
 
-            {!user && (
-              <button
-                onClick={() => navigate('/signin')}
-                className={`${
-                  darkTheme ? 'bg-dark3' : 'bg-light2'
-                } w-12 h-12 p-0.5 border-2 border-teal rounded-full lg:hidden`}
-              >
-                <img
-                  className="w-full h-full object-cover rounded-full"
-                  src={userIcon}
-                  alt="profile"
-                />
-              </button>
-            )}
             {/* Menubar */}
             <button
               onClick={() => setShowNav(!showNav)}
