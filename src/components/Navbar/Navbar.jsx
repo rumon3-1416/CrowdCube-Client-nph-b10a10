@@ -23,13 +23,18 @@ const Navbar = () => {
   img.onerror = () => setIsValidUrl(false);
 
   const handleTheme = () => {
-    document.body.style.backgroundColor = darkTheme ? '#f7f7f7' : '#121212';
+    document.body.style.backgroundColor = darkTheme ? '#f7f7f7' : '#303030';
+    window.document.documentElement.classList.add(
+      darkTheme ? 'bg-[#f7f7f7]' : 'bg-dark3'
+    );
     setDarkTheme(!darkTheme);
   };
 
   return (
     <div className="w-full fixed top-0 inset-x-0 z-10">
-      <div className={`w-full ${darkTheme ? 'bg-darkTrans' : 'bg-lightTrans'}`}>
+      <div
+        className={`w-full ${darkTheme ? 'bg-dark5Trans' : 'bg-lightTrans'}`}
+      >
         <nav
           className={`w-[95%] max-w-[1280px] backdrop-blur-md py-6 mx-auto flex justify-between items-center gap-2 relative`}
         >
