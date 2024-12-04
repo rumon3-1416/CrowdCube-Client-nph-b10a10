@@ -44,7 +44,7 @@ const Navbar = () => {
           </h2>
 
           <ul
-            className={`text-white bg-tealTrans md:bg-transparent backdrop-blur-md md:backdrop-blur-none font-medium py-8 md:py-0 rounded-xl md:flex flex-col md:flex-row items-center gap-4 md:gap-4 xl:gap-8 absolute md:static inset-x-0 top-24 md:top-0 z-20 ${
+            className={`text-white bg-tealTrans md:bg-transparent backdrop-blur-md md:backdrop-blur-none font-medium py-8 md:py-0 rounded-xl overflow-hidden md:flex flex-col md:flex-row items-center gap-4 md:gap-2 lg:gap-4 xl:gap-8 absolute md:static inset-x-0 top-24 md:top-0 z-20 ${
               showNav ? 'flex' : 'hidden'
             }
             ${darkTheme ? 'md:text-lightTrans' : 'md:text-[#32443f]'}`}
@@ -55,13 +55,13 @@ const Navbar = () => {
             <li onClick={() => setShowNav(false)}>
               <NavLink to="/campaigns">Campaigns</NavLink>
             </li>
-            <li onClick={() => setShowNav(false)}>
+            <li onClick={() => setShowNav(false)} className="text-nowrap">
               <NavLink to="/help">Add Campaign</NavLink>
             </li>
-            <li onClick={() => setShowNav(false)}>
+            <li onClick={() => setShowNav(false)} className="text-nowrap">
               <NavLink to="/dashboard">My Campaign</NavLink>
             </li>
-            <li onClick={() => setShowNav(false)}>
+            <li onClick={() => setShowNav(false)} className="text-nowrap">
               <NavLink to="/my_donation">My Donation</NavLink>
             </li>
           </ul>
@@ -98,26 +98,28 @@ const Navbar = () => {
                 </button> */}
               </>
             ) : (
-              <>
+              <div className="hidden lg:flex items-center">
                 <button
                   onClick={() => navigate('/signin')}
-                  className="text-teal text-lg font-medium px-5 lg:px-9 py-2 border-2 border-teal rounded-full hidden md:block"
+                  className="text-teal text-lg font-medium ps-5 xl:ps-9 pe-1.5 xl:pe-5 py-2 border-2 border-teal rounded-s-full"
                 >
                   Login
                 </button>
                 <button
                   onClick={() => navigate('/signup')}
-                  className="bg-teal text-white text-lg font-medium px-5 lg:px-9 py-2  border-2 border-teal rounded-full hidden md:block"
+                  className="bg-teal text-white text-lg font-medium ps-1.5 xl:ps-5 pe-5 xl:pe-9 py-2  border-2 border-teal rounded-e-full"
                 >
                   Register
                 </button>
-              </>
+              </div>
             )}
 
             {!user && (
               <button
                 onClick={() => navigate('/signin')}
-                className="bg-[#f7f7f7] w-12 h-12 p-0.5 border-2 border-teal rounded-full md:hidden"
+                className={`${
+                  darkTheme ? 'bg-dark3' : 'bg-light2'
+                } w-12 h-12 p-0.5 border-2 border-teal rounded-full lg:hidden`}
               >
                 <img
                   className="w-full h-full object-cover rounded-full"
