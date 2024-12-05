@@ -10,6 +10,8 @@ export default {
         teal3: '#D3EBEA',
         tealTrans: '#5DADAAe2',
         coral: '#FF7468',
+        coral2: '#ff7c70',
+        coral3: '#ff8d83',
         light2: '#f7f7f7',
         lightTrans: '#f7f7f7b7',
         dark: '#0a0a0a',

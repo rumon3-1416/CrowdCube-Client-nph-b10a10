@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Banner from './Banner/Banner';
 import MainLayout from '../../layouts/MainLayout';
 import HomeCampaigns from './HomeCampaigns/HomeCampaigns';
+import About from './About/About';
 
 const Home = () => {
   useEffect(() => {
@@ -12,6 +13,7 @@ const Home = () => {
     <MainLayout>
       <Banner />
       <HomeCampaigns />
+      <About />
     </MainLayout>
   );
 };

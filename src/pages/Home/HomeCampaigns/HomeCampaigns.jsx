@@ -22,7 +22,7 @@ const HomeCampaigns = () => {
       >
         Our Running Campaigns
       </h2>
-      <p className="text-coral font-medium mt-4 mb-10">
+      <p className="text-coral3 font-medium mt-4 mb-10">
         How do something great to help others
       </p>
 
