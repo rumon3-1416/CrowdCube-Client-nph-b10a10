@@ -60,10 +60,10 @@ const Navbar = () => {
               <NavLink to="/campaigns">Campaigns</NavLink>
             </li>
             <li onClick={() => setShowNav(false)} className="text-nowrap">
-              <NavLink to="/help">Add Campaign</NavLink>
+              <NavLink to="/add_campaign">Add Campaign</NavLink>
             </li>
             <li onClick={() => setShowNav(false)} className="text-nowrap">
-              <NavLink to="/dashboard">My Campaign</NavLink>
+              <NavLink to="/my_campaign">My Campaign</NavLink>
             </li>
             <li onClick={() => setShowNav(false)} className="text-nowrap">
               <NavLink to="/my_donation">My Donation</NavLink>
