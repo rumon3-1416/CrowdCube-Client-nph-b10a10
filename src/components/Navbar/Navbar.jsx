@@ -82,7 +82,7 @@ const Navbar = () => {
             {/* Theme Button */}
             <button
               onClick={handleTheme}
-              className="bg-transparent w-12 h-12 p-2.5 bd-dark rounded-full"
+              className="bg-transparent w-12 h-12 p-2.5 rounded-full outline-none"
             >
               <img
                 className="w-full h-full object-cover rounded-full"

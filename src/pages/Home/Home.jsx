@@ -3,6 +3,8 @@ import Banner from './Banner/Banner';
 import MainLayout from '../../layouts/MainLayout';
 import HomeCampaigns from './HomeCampaigns/HomeCampaigns';
 import About from './About/About';
+import Volunteer from './Volunteer/Volunteer';
+import Categories from './Categories/Categories';
 
 const Home = () => {
   useEffect(() => {
@@ -10,11 +12,15 @@ const Home = () => {
   }, []);
 
   return (
-    <MainLayout>
-      <Banner />
-      <HomeCampaigns />
+    <>
+      <MainLayout>
+        <Banner />
+      </MainLayout>
       <About />
-    </MainLayout>
+      <HomeCampaigns />
+      <Categories />
+      <Volunteer />
+    </>
   );
 };
 
