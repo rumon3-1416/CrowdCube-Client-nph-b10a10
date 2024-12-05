@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`bg-gradient-to-tr mt-[100px] ${
+      className={`bg-gradient-to-tr ${
         darkTheme
           ? 'from-[#303030] to-[#606060]'
           : 'from-[#ecdad9] to-[#d3ebea]'
