@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import MainLayout from '../../layouts/MainLayout';
 import { AuthContext } from '../../features/AuthProvider';
 import CampaignRow from './CampaignRow';
+import { get } from '../../services/api';
 
 const AllCampaigns = () => {
   const [campaigns, setCampaigns] = useState([]);
@@ -9,9 +10,7 @@ const AllCampaigns = () => {
   const { darkTheme, serverUrl } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`${serverUrl}/campaigns`)
-      .then(res => res.json())
-      .then(data => setCampaigns(data));
+    get(`${serverUrl}/campaigns`).then(data => data && setCampaigns(data));
   }, [serverUrl]);
 
   const handleSort = method => {

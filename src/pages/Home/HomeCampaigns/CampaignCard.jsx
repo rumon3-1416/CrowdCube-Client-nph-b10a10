@@ -1,11 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import clockIcon from '../../../assets/icons/clock.png';
 import { AuthContext } from '../../../features/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const CampaignCard = ({ campaign }) => {
   const { _id, image, title, description, deadline } = campaign;
 
+  const navigate = useNavigate();
   const { darkTheme } = useContext(AuthContext);
 
   return (
@@ -42,11 +44,14 @@ const CampaignCard = ({ campaign }) => {
               darkTheme ? 'text-gray-300' : 'text-gray-600'
             }`}
           >
-            {description.slice(0, 74) + '...'}
+            {description?.slice(0, 74) + '...'}
           </p>
         </div>
 
-        <button className="bg-teal text-white font-medium px-6 py-2.5 rounded-full">
+        <button
+          onClick={() => navigate(`/campaigns/${_id}`)}
+          className="bg-teal text-white font-medium px-6 py-2.5 rounded-full"
+        >
           See more
         </button>
       </div>

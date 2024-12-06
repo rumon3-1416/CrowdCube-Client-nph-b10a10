@@ -6,10 +6,9 @@ import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home/Home';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
-import UpdateProfile from './pages/Authentication/UpdateProfile';
-import ResetPassword from './pages/Authentication/ResetPassword';
 import AllCampaigns from './pages/AllCampaigns/AllCampaigns';
 import CampaignDetails from './pages/CampaignDetails/CampaignDetails';
+import MyDonations from './pages/MyDonations/MyDonations';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +21,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/campaigns',
+        path: '/all_campaigns',
         element: <AllCampaigns />,
       },
       {
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: '/campaign/:id',
+        path: '/campaigns/:id',
         element: (
           <PrivateNavigator>
             <CampaignDetails />
@@ -42,16 +41,12 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/updateprofile',
+        path: '/my_donations',
         element: (
           <PrivateNavigator>
-            <UpdateProfile />
+            <MyDonations />
           </PrivateNavigator>
         ),
-      },
-      {
-        path: 'resetpassword',
-        element: <ResetPassword />,
       },
     ],
   },

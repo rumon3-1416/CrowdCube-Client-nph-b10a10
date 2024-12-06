@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../features/AuthProvider';
 import CampaignCard from './CampaignCard';
 import MainLayout from '../../../layouts/MainLayout';
+import { get } from '../../../services/api';
 
 const HomeCampaigns = () => {
   const [campaigns, setCampaigns] = useState([]);
@@ -9,9 +10,9 @@ const HomeCampaigns = () => {
   const { serverUrl, darkTheme } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`${serverUrl}/campaigns?limit=8&latest=true`)
-      .then(res => res.json())
-      .then(data => setCampaigns(data));
+    get(`${serverUrl}/campaigns?limit=8&latest=true`).then(
+      data => data && setCampaigns(data)
+    );
   }, [serverUrl]);
 
   return (

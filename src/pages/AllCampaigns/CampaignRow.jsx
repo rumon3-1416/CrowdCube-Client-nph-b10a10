@@ -20,7 +20,7 @@ const CampaignRow = ({ campaign, index }) => {
       <td className="text-center">
         <Link
           className="text-teal hover:text-coral text-nowrap"
-          to={`/campaign/${_id}`}
+          to={`/campaigns/${_id}`}
         >
           See More
         </Link>

@@ -10,6 +10,7 @@ import 'swiper/css/autoplay';
 import Slide from './Slide';
 import './carousel.css';
 import { AuthContext } from '../../../features/AuthProvider';
+import { get } from '../../../services/api';
 
 const Banner = () => {
   const [offersData, setOffersData] = useState([]);
@@ -17,9 +18,7 @@ const Banner = () => {
   const { serverUrl } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`${serverUrl}/slides`)
-      .then(res => res.json())
-      .then(data => setOffersData(data));
+    get(`${serverUrl}/slides`).then(data => data && setOffersData(data));
   }, [serverUrl]);
 
   return (

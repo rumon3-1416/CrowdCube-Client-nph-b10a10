@@ -57,16 +57,16 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li onClick={() => setShowNav(false)}>
-              <NavLink to="/campaigns">Campaigns</NavLink>
+              <NavLink to="/all_campaigns">Campaigns</NavLink>
             </li>
             <li onClick={() => setShowNav(false)} className="text-nowrap">
               <NavLink to="/add_campaign">Add Campaign</NavLink>
             </li>
             <li onClick={() => setShowNav(false)} className="text-nowrap">
-              <NavLink to="/my_campaign">My Campaign</NavLink>
+              <NavLink to="/my_campaigns">My Campaign</NavLink>
             </li>
             <li onClick={() => setShowNav(false)} className="text-nowrap">
-              <NavLink to="/my_donation">My Donation</NavLink>
+              <NavLink to="/my_donations">My Donation</NavLink>
             </li>
             {!user && (
               <li
@@ -124,7 +124,7 @@ const Navbar = () => {
                     </h2>
                     <button
                       onClick={() => signOutUser()}
-                      className="text-teal font-medium px-3 py-1 mt-3 border-2 border-teal rounded-full"
+                      className="text-teal font-medium text-nowrap px-3 py-1 mt-3 border-2 border-teal rounded-full"
                     >
                       Log Out
                     </button>
