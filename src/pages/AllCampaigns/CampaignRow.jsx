@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../features/AuthProvider';
 
 const CampaignRow = ({ campaign, index }) => {
-  const { _id, title, type, deadline } = campaign;
+  const { _id, title, deadline, minimumDonation } = campaign;
 
   const { darkTheme } = useContext(AuthContext);
 
@@ -15,9 +15,9 @@ const CampaignRow = ({ campaign, index }) => {
     >
       <td>{index + 1}</td>
       <td>{title}</td>
-      <td>{type}</td>
       <td>{deadline.split('T')[0]}</td>
-      <td>
+      <td className="text-center">{`${minimumDonation}$`}</td>
+      <td className="text-center">
         <Link
           className="text-teal hover:text-coral text-nowrap"
           to={`/campaign/${_id}`}

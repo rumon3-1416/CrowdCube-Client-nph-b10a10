@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../features/AuthProvider';
+import Loading from '../../pages/Loading/Loading';
 
 const PrivateNavigator = ({ children }) => {
   const { isLoading, user } = useContext(AuthContext);
@@ -8,11 +9,7 @@ const PrivateNavigator = ({ children }) => {
   const { pathname } = useLocation();
 
   if (isLoading) {
-    return (
-      <div className="w-full min-h-[50vh] flex justify-center items-center">
-        <h2 className="text-3xl font-semibold">Loading...</h2>
-      </div>
-    );
+    return <Loading />;
   } else if (user) {
     return children;
   } else {

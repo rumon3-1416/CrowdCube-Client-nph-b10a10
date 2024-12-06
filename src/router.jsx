@@ -35,7 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/campaign/:id',
-        element: <CampaignDetails />,
+        element: (
+          <PrivateNavigator>
+            <CampaignDetails />
+          </PrivateNavigator>
+        ),
       },
       {
         path: '/updateprofile',

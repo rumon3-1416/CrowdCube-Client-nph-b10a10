@@ -54,7 +54,7 @@ const SignIn = () => {
     )
       .then(() => {
         setIsLoading(false);
-        navigate('/');
+        navigate(desired);
       })
       .catch(err => setErrMessage(err.message));
   };
