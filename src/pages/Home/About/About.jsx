@@ -59,7 +59,7 @@ const About = () => {
 
             {/* Donate */}
             <div className="mt-12 flex items-start gap-4">
-              <div className="bg-[#85e9e66a] size-12 min-w-12 min-h-12 p-3 rounded-full flex justify-center items-center">
+              <div className="bg-[#ff7b6f58] size-12 min-w-12 min-h-12 p-3 rounded-full flex justify-center items-center">
                 <img className="w-full" src={donateIcon} alt="donate" />
               </div>
               <div>
@@ -83,7 +83,7 @@ const About = () => {
 
             {/* Volunteer */}
             <div className="mt-10 flex items-start gap-4">
-              <div className="bg-[#ff7a6e85] size-12 min-w-12 min-h-12 p-3 rounded-full flex justify-center items-center">
+              <div className="bg-[#8efffb51] size-12 min-w-12 min-h-12 p-3 rounded-full flex justify-center items-center">
                 <img className="h-full" src={volunteerIcon} alt="volunteer" />
               </div>
               <div>

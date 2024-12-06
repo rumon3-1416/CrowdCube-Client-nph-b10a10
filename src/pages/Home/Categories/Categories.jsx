@@ -12,8 +12,6 @@ import coralArrow from '../../../assets/icons/arrow-coral.png';
 import tealArrow from '../../../assets/icons/arrow-teal.png';
 
 const Categories = () => {
-  const [currArrow, setCurrArrow] = useState(null);
-
   const { darkTheme } = useContext(AuthContext);
 
   return (
@@ -50,17 +48,18 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Donate to charity for those who need healthy and nutritious food.
             </p>
-            <Link
-              onMouseOver={() => setCurrArrow(1)}
-              onMouseOut={() => setCurrArrow(null)}
-              to="/campaigns"
-            >
+            <Link className="group" to="/campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
                   <img
-                    className="w-3.5"
-                    src={currArrow === 1 ? coralArrow : tealArrow}
+                    className="w-3.5 group-hover:hidden"
+                    src={tealArrow}
+                    alt="->"
+                  />
+                  <img
+                    className="w-3.5 hidden group-hover:block"
+                    src={coralArrow}
                     alt="->"
                   />
                 </span>
@@ -87,17 +86,18 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Donate to charity for those who need better medical care.
             </p>
-            <Link
-              onMouseOver={() => setCurrArrow(2)}
-              onMouseOut={() => setCurrArrow(null)}
-              to="/campaigns"
-            >
+            <Link className="group" to="/campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
                   <img
-                    className="w-3.5"
-                    src={currArrow === 2 ? coralArrow : tealArrow}
+                    className="w-3.5 group-hover:hidden"
+                    src={tealArrow}
+                    alt="->"
+                  />
+                  <img
+                    className="w-3.5 hidden group-hover:block"
+                    src={coralArrow}
                     alt="->"
                   />
                 </span>
@@ -124,17 +124,18 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Support charitable causes to help people in need around the world.
             </p>
-            <Link
-              onMouseOver={() => setCurrArrow(3)}
-              onMouseOut={() => setCurrArrow(null)}
-              to="/campaigns"
-            >
+            <Link className="group" to="/campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
                   <img
-                    className="w-3.5"
-                    src={currArrow === 3 ? coralArrow : tealArrow}
+                    className="w-3.5 group-hover:hidden"
+                    src={tealArrow}
+                    alt="->"
+                  />
+                  <img
+                    className="w-3.5 hidden group-hover:block"
+                    src={coralArrow}
                     alt="->"
                   />
                 </span>
@@ -161,17 +162,18 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Donating to charity for chilren who need quality education.
             </p>
-            <Link
-              onMouseOver={() => setCurrArrow(4)}
-              onMouseOut={() => setCurrArrow(null)}
-              to="/campaigns"
-            >
+            <Link className="group" to="/campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
                   <img
-                    className="w-3.5"
-                    src={currArrow === 4 ? coralArrow : tealArrow}
+                    className="w-3.5 group-hover:hidden"
+                    src={tealArrow}
+                    alt="->"
+                  />
+                  <img
+                    className="w-3.5 hidden group-hover:block"
+                    src={coralArrow}
                     alt="->"
                   />
                 </span>

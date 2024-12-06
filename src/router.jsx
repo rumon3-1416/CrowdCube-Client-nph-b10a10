@@ -8,6 +8,8 @@ import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
 import UpdateProfile from './pages/Authentication/UpdateProfile';
 import ResetPassword from './pages/Authentication/ResetPassword';
+import AllCampaigns from './pages/AllCampaigns/AllCampaigns';
+import CampaignDetails from './pages/CampaignDetails/CampaignDetails';
 
 const router = createBrowserRouter([
   {
@@ -20,12 +22,20 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: '/campaigns',
+        element: <AllCampaigns />,
+      },
+      {
         path: '/signin',
         element: <SignIn />,
       },
       {
         path: '/signup',
         element: <SignUp />,
+      },
+      {
+        path: '/campaign/:id',
+        element: <CampaignDetails />,
       },
       {
         path: '/updateprofile',

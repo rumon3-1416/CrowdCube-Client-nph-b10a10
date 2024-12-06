@@ -36,7 +36,7 @@ const Volunteer = () => {
 
             {/* volunteer */}
             <div
-              className={`w-[300px] p-3 rounded-xl shadow-lg flex items-center gap-4 absolute bottom-[20%] left-0 ${
+              className={`w-[18rem] p-3 rounded-xl shadow-lg flex items-center gap-4 absolute bottom-[20%] left-0 ${
                 darkTheme ? 'bg-[#545454]' : 'bg-white'
               }`}
             >
@@ -58,7 +58,7 @@ const Volunteer = () => {
 
             {/* hand */}
             <div
-              className={`w-[300px] p-3 rounded-xl shadow-lg flex items-center gap-4 absolute bottom-0 left-[10%] ${
+              className={`w-[18rem] p-3 rounded-xl shadow-lg flex items-center gap-4 absolute bottom-0 left-[10%] ${
                 darkTheme ? 'bg-[#545454]' : 'bg-white'
               }`}
             >
@@ -74,7 +74,7 @@ const Volunteer = () => {
                   darkTheme && 'text-gray-300'
                 }`}
               >
-                You can contribute your time, skills and knowledge.
+                Helping Thousands Of People.
               </p>
             </div>
           </div>
