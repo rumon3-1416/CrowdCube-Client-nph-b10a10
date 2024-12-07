@@ -10,7 +10,7 @@ const Volunteer = () => {
   const { darkTheme } = useContext(AuthContext);
 
   return (
-    <section className="bg-[#FF74680e] py-24">
+    <section className="bg-coralBg py-24">
       <MainLayout>
         <div className="grid md:grid-cols-[2fr,_3fr] items-center gap-8">
           {/* Images */}

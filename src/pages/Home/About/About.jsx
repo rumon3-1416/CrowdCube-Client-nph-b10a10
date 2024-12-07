@@ -9,7 +9,7 @@ const About = () => {
   const { darkTheme } = useContext(AuthContext);
 
   return (
-    <section className="bg-[#5DADAA0e] pt-24 pb-8">
+    <section className="bg-tealBg pt-24 pb-8">
       <MainLayout>
         <div className="grid md:grid-cols-2 items-center">
           {/* Images */}

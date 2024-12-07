@@ -15,7 +15,7 @@ const Categories = () => {
   const { darkTheme } = useContext(AuthContext);
 
   return (
-    <section className="bg-[#5DADAA0e] pt-16 pb-8">
+    <section className="bg-tealBg pt-16 pb-8">
       <MainLayout>
         <h1
           className={`text-4xl leading-[44px] font-semibold text-center mb-4 ${

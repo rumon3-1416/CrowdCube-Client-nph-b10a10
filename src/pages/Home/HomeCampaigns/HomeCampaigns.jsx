@@ -16,7 +16,7 @@ const HomeCampaigns = () => {
   }, [serverUrl]);
 
   return (
-    <section id="campaigns" className="bg-[#FF74680e] pt-16 pb-12">
+    <section id="campaigns" className="bg-coralBg pt-16 pb-12">
       <MainLayout>
         <h2
           className={`text-3xl font-bold ${

@@ -216,6 +216,7 @@ const Navbar = () => {
                 backgroundColor: '#5DADAA',
                 color: 'white',
                 borderRadius: '0.3rem',
+                zIndex: '30',
               }}
             />
           </nav>

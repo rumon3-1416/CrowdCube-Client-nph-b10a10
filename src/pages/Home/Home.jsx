@@ -13,9 +13,7 @@ const Home = () => {
 
   return (
     <>
-      <MainLayout>
-        <Banner />
-      </MainLayout>
+      <Banner />
       <About />
       <HomeCampaigns />
       <Categories />
