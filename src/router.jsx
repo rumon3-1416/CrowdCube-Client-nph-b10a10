@@ -10,6 +10,8 @@ import AllCampaigns from './pages/AllCampaigns/AllCampaigns';
 import CampaignDetails from './pages/CampaignDetails/CampaignDetails';
 import MyDonations from './pages/MyDonations/MyDonations';
 import AddCampaign from './pages/AddCampaign/AddCampaign';
+import MyCampaigns from './pages/MyCampaigns/MyCampaigns';
+import UpdateCampaign from './pages/UpdateCampaign.jsx/UpdateCampaign';
 
 const router = createBrowserRouter([
   {
@@ -22,16 +24,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/all_campaigns',
-        element: <AllCampaigns />,
-      },
-      {
         path: '/signin',
         element: <SignIn />,
       },
       {
         path: '/signup',
         element: <SignUp />,
+      },
+      {
+        path: '/all_campaigns',
+        element: <AllCampaigns />,
       },
       {
         path: '/campaigns/:id',
@@ -42,18 +44,34 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/my_donations',
-        element: (
-          <PrivateNavigator>
-            <MyDonations />
-          </PrivateNavigator>
-        ),
-      },
-      {
         path: '/add_campaign',
         element: (
           <PrivateNavigator>
             <AddCampaign />
+          </PrivateNavigator>
+        ),
+      },
+      {
+        path: '/my_campaigns',
+        element: (
+          <PrivateNavigator>
+            <MyCampaigns />
+          </PrivateNavigator>
+        ),
+      },
+      {
+        path: '/update_campaign/:id',
+        element: (
+          <PrivateNavigator>
+            <UpdateCampaign />
+          </PrivateNavigator>
+        ),
+      },
+      {
+        path: '/my_donations',
+        element: (
+          <PrivateNavigator>
+            <MyDonations />
           </PrivateNavigator>
         ),
       },

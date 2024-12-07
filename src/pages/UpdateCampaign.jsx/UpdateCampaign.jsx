@@ -1,19 +1,33 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import MainLayout from '../../layouts/MainLayout';
 import { AuthContext } from '../../features/AuthProvider';
-import { post } from '../../services/api';
+import { useParams } from 'react-router-dom';
+import { get, patch } from '../../services/api';
 
-const AddCampaign = () => {
+const UpdateCampaign = () => {
+  const [campaign, setCampaign] = useState({});
   const [startDate, setStartDate] = useState(new Date());
 
-  const { darkTheme, serverUrl, user } = useContext(AuthContext);
+  const { title, type, minimumDonation, image, description, name, email } =
+    campaign;
+
+  const { id } = useParams();
+  const { darkTheme, serverUrl } = useContext(AuthContext);
+
   const labelColor = darkTheme ? 'text-gray-300' : 'text-gray-700';
   const inputColor = darkTheme
     ? 'bg-dark3 text-gray-200'
     : 'bg-light2 text-gray-800';
+
+  useEffect(() => {
+    get(`${serverUrl}/campaigns/${id}`).then(data => {
+      setCampaign(data);
+      setStartDate(new Date(data.deadline));
+    });
+  }, [serverUrl, id]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,7 +41,7 @@ const AddCampaign = () => {
     const name = form.name.value;
     const email = form.email.value;
 
-    post(`${serverUrl}/campaigns`, {
+    patch(`${serverUrl}/campaigns/${id}`, {
       title,
       type,
       minimumDonation,
@@ -48,8 +62,9 @@ const AddCampaign = () => {
               darkTheme ? 'text-light2' : 'text-gray-800'
             }`}
           >
-            Add Campaign
+            Update Campaign
           </h3>
+
           <form onSubmit={handleSubmit}>
             {/* Title */}
             <div className="mb-6 flex flex-col">
@@ -65,6 +80,7 @@ const AddCampaign = () => {
                 type="text"
                 name="title"
                 placeholder="Campaign Title"
+                defaultValue={title}
                 required
               />
             </div>
@@ -83,6 +99,7 @@ const AddCampaign = () => {
                 id="type"
                 name="type"
                 placeholder="Campaign Type"
+                defaultValue={type}
                 required
               />
             </div>
@@ -101,6 +118,7 @@ const AddCampaign = () => {
                 id="amount"
                 name="amount"
                 placeholder="Minimum Donation Amount"
+                defaultValue={minimumDonation}
                 required
               />
             </div>
@@ -119,6 +137,7 @@ const AddCampaign = () => {
                 id="url"
                 name="url"
                 placeholder="Campaign Image URL"
+                defaultValue={image}
                 required
               />
             </div>
@@ -149,6 +168,7 @@ const AddCampaign = () => {
                 name="description"
                 placeholder="Write a short description about you campaign"
                 rows="4"
+                defaultValue={description}
                 required
               ></textarea>
             </div>
@@ -166,7 +186,7 @@ const AddCampaign = () => {
                 type="text"
                 id="name"
                 name="name"
-                defaultValue={user?.displayName}
+                defaultValue={name}
                 readOnly
               />
             </div>
@@ -184,7 +204,7 @@ const AddCampaign = () => {
                 type="email"
                 id="email"
                 name="email"
-                defaultValue={user?.email}
+                defaultValue={email}
                 readOnly
               />
             </div>
@@ -195,7 +215,7 @@ const AddCampaign = () => {
                 type="submit"
                 className="bg-teal text-light2 hover:bg-coral2 text-xl font-semibold px-12 py-2.5 rounded-full"
               >
-                Add
+                Update
               </button>
             </div>
           </form>
@@ -205,4 +225,4 @@ const AddCampaign = () => {
   );
 };
 
-export default AddCampaign;
+export default UpdateCampaign;
