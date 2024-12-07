@@ -48,7 +48,7 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Donate to charity for those who need healthy and nutritious food.
             </p>
-            <Link className="group" to="/campaigns">
+            <Link className="group" to="/all_campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
@@ -86,7 +86,7 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Donate to charity for those who need better medical care.
             </p>
-            <Link className="group" to="/campaigns">
+            <Link className="group" to="/all_campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
@@ -124,7 +124,7 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Support charitable causes to help people in need around the world.
             </p>
-            <Link className="group" to="/campaigns">
+            <Link className="group" to="/all_campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
@@ -162,7 +162,7 @@ const Categories = () => {
             <p className={darkTheme ? 'text-gray-300' : 'text-gray-600'}>
               Donating to charity for chilren who need quality education.
             </p>
-            <Link className="group" to="/campaigns">
+            <Link className="group" to="/all_campaigns">
               <p className="text-teal hover:text-coral text-lg font-semibold mt-6 inline-flex items-center gap-3">
                 Read More{' '}
                 <span>
