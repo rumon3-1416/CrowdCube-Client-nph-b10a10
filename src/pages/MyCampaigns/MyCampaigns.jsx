@@ -41,9 +41,7 @@ const MyCampaigns = () => {
                 <th>Title</th>
                 <th>Deadline</th>
                 <th>Donation</th>
-                <th colSpan={2} className="text-center">
-                  Action
-                </th>
+                <th className="text-center">Action</th>
               </tr>
             </thead>
             {/* body */}
@@ -53,6 +51,7 @@ const MyCampaigns = () => {
                   <CampaignRow
                     key={campaign._id}
                     campaign={campaign}
+                    setCampaigns={setCampaigns}
                     index={index}
                   />
                 ))}
