@@ -6,10 +6,16 @@ import MainLayout from '../../layouts/MainLayout';
 import { AuthContext } from '../../features/AuthProvider';
 import { useParams } from 'react-router-dom';
 import { get, patch } from '../../services/api';
+import Modal from '../../components/Modal/Modal';
 
 const UpdateCampaign = () => {
   const [campaign, setCampaign] = useState({});
   const [startDate, setStartDate] = useState(new Date());
+  const [modal, setModal] = useState({
+    show: false,
+    res: '',
+    title: '',
+  });
 
   const { title, type, minimumDonation, image, description, name, email } =
     campaign;
@@ -50,13 +56,21 @@ const UpdateCampaign = () => {
       description,
       name,
       email,
-    }).then(res => console.log(res));
+    })
+      .then(
+        res =>
+          res.acknowledged &&
+          setModal({ show: true, res: 'success', title: 'Campaign Updated' })
+      )
+      .catch(err =>
+        setModal({ show: true, res: 'error', title: `Couldn't Update!` })
+      );
   };
 
   return (
-    <div className="bg-[#5DADAA0e] pt-8 pb-24">
+    <div className="bg-tealBg pt-8 pb-24">
       <MainLayout>
-        <div className="bg-[#FF74680e] px-8 py-10 rounded-xl shadow-lg">
+        <div className="bg-coralBg px-8 py-10 rounded-xl shadow-lg">
           <h3
             className={`text-3xl font-bold text-center mb-12 ${
               darkTheme ? 'text-light2' : 'text-gray-800'
@@ -219,6 +233,15 @@ const UpdateCampaign = () => {
               </button>
             </div>
           </form>
+
+          <Modal property={modal}>
+            <button
+              onClick={() => setModal({ ...modal, show: false })}
+              className="bg-teal text-white text-lg font-medium px-6 py-2 rounded-full"
+            >
+              OK
+            </button>
+          </Modal>
         </div>
       </MainLayout>
     </div>

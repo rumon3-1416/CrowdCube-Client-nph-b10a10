@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../features/AuthProvider';
 
@@ -9,7 +9,7 @@ const CampaignRow = ({ campaign, index }) => {
 
   return (
     <tr
-      className={`hover:bg-[#FF74680e] border-x border-b border-teal2 ${
+      className={`hover:bg-coralBg border-x border-b border-teal2 ${
         darkTheme && 'text-gray-300'
       }`}
     >

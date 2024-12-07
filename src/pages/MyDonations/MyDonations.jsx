@@ -10,13 +10,15 @@ const MyDonations = () => {
   const { darkTheme, serverUrl, user } = useContext(AuthContext);
 
   useEffect(() => {
+    document.title = 'My Donations | CrowdCube';
+
     get(`${serverUrl}/donations?user_email=${user.email}`).then(data =>
       setDonations(data)
     );
   }, [serverUrl, user]);
 
   return (
-    <section id="campaigns" className="bg-[#FF74680e] pt-16 pb-12">
+    <section id="campaigns" className="bg-tealBg pt-16 pb-24">
       <MainLayout>
         <h2
           className={`text-3xl font-bold mb-10 ${

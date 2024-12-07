@@ -10,6 +10,8 @@ const AllCampaigns = () => {
   const { darkTheme, serverUrl } = useContext(AuthContext);
 
   useEffect(() => {
+    document.title = 'All Campaigns | CrowdCube';
+
     get(`${serverUrl}/campaigns`).then(data => data && setCampaigns(data));
   }, [serverUrl]);
 
@@ -23,7 +25,7 @@ const AllCampaigns = () => {
   };
 
   return (
-    <section className="bg-[#5DADAA0e] pt-8 pb-24">
+    <section className="bg-tealBg pt-8 pb-24">
       <MainLayout>
         <h1
           className={`text-2xl leading-[44px] font-semibold ${
@@ -33,22 +35,23 @@ const AllCampaigns = () => {
           All Campaigns
         </h1>
 
+        {/* Sort */}
         <div className="flex justify-end">
-          <div className="group cursor-pointer relative">
-            <p className="bg-teal text-gray-100 font-medium w-28 px-4 py-1 rounded-t-lg rounded-b-lg group-hover:rounded-b-none">
+          <div className="group text-center cursor-pointer relative">
+            <p className="bg-teal text-gray-100 font-medium w-28 px-4 py-2 rounded-t-lg rounded-b-lg group-hover:rounded-b-none">
               Sort By
             </p>
 
-            <ul className="bg-teal text-light2 w-28 font-medium rounded-b-lg hidden group-hover:block absolute top-8 right-0 z-10">
+            <ul className="bg-teal text-light2 w-28 font-medium rounded-b-lg hidden group-hover:block absolute top-9 right-0 z-10">
               <li
                 onClick={() => handleSort('l-h')}
-                className="hover:text-coral text-nowrap px-4 py-1"
+                className="hover:text-coral2 text-nowrap px-4 py-1"
               >
                 Low-High
               </li>
               <li
                 onClick={() => handleSort('h-l')}
-                className="hover:text-coral text-nowrap px-4 py-1 rounded-b-lg"
+                className="hover:text-coral2 text-nowrap px-4 pt-1 pb-2 rounded-b-lg"
               >
                 High-Low
               </li>

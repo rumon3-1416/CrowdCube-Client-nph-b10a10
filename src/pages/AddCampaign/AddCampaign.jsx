@@ -5,9 +5,15 @@ import 'react-datepicker/dist/react-datepicker.css';
 import MainLayout from '../../layouts/MainLayout';
 import { AuthContext } from '../../features/AuthProvider';
 import { post } from '../../services/api';
+import Modal from '../../components/Modal/Modal';
 
 const AddCampaign = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const [modal, setModal] = useState({
+    show: false,
+    res: '',
+    title: '',
+  });
 
   const { darkTheme, serverUrl, user } = useContext(AuthContext);
   const labelColor = darkTheme ? 'text-gray-300' : 'text-gray-700';
@@ -36,13 +42,26 @@ const AddCampaign = () => {
       description,
       name,
       email,
-    }).then(res => console.log(res));
+    })
+      .then(
+        res =>
+          res.acknowledged &&
+          (setModal({ show: true, res: 'success', title: 'Campaign Added' }),
+          e.target.reset())
+      )
+      .catch(err =>
+        setModal({
+          show: true,
+          res: 'error',
+          title: `Campaign Couldn't added!`,
+        })
+      );
   };
 
   return (
-    <div className="bg-[#5DADAA0e] pt-8 pb-24">
+    <div className="bg-tealBg pt-8 pb-24">
       <MainLayout>
-        <div className="bg-[#FF74680e] px-8 py-10 rounded-xl shadow-lg">
+        <div className="bg-coralBg px-8 py-10 rounded-xl shadow-lg">
           <h3
             className={`text-3xl font-bold text-center mb-12 ${
               darkTheme ? 'text-light2' : 'text-gray-800'
@@ -50,6 +69,7 @@ const AddCampaign = () => {
           >
             Add Campaign
           </h3>
+
           <form onSubmit={handleSubmit}>
             {/* Title */}
             <div className="mb-6 flex flex-col">
@@ -199,6 +219,15 @@ const AddCampaign = () => {
               </button>
             </div>
           </form>
+
+          <Modal property={modal}>
+            <button
+              onClick={() => setModal({ ...modal, show: false })}
+              className="bg-teal text-white text-lg font-medium px-6 py-2 rounded-full"
+            >
+              OK
+            </button>
+          </Modal>
         </div>
       </MainLayout>
     </div>

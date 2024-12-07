@@ -8,7 +8,7 @@ import Categories from './Categories/Categories';
 
 const Home = () => {
   useEffect(() => {
-    document.title = 'Home | Clothing Donation';
+    document.title = 'Home | CrowdCube';
   }, []);
 
   return (
