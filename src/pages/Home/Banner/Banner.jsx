@@ -11,6 +11,7 @@ import Slide from './Slide';
 import './carousel.css';
 import { AuthContext } from '../../../features/AuthProvider';
 import { get } from '../../../services/api';
+import Loading from '../../../components/Loading/Loading';
 
 const Banner = () => {
   const [offersData, setOffersData] = useState([]);
@@ -23,7 +24,7 @@ const Banner = () => {
 
   return (
     <section>
-      {offersData?.length > 2 && (
+      {offersData?.length >= 3 ? (
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -43,6 +44,8 @@ const Banner = () => {
               </SwiperSlide>
             ))}
         </Swiper>
+      ) : (
+        <Loading />
       )}
     </section>
   );

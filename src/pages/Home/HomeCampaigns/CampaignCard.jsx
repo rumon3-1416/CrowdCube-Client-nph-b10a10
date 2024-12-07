@@ -50,7 +50,7 @@ const CampaignCard = ({ campaign }) => {
 
         <button
           onClick={() => navigate(`/campaigns/${_id}`)}
-          className="bg-teal text-white font-medium px-6 py-2.5 rounded-full"
+          className="bg-teal hover:bg-coral2 text-white font-medium px-6 py-2.5 rounded-full"
         >
           See more
         </button>

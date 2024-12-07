@@ -21,14 +21,18 @@ const CampaignDetails = () => {
     const { displayName: name, email } = user;
     const date = new Date().toISOString();
 
-    post(`${serverUrl}/donations`, {
-      title,
-      image,
-      donation: minimumDonation,
-      date,
-      name,
-      email,
-    }).then(res => console.log(res));
+    if (new Date(deadline) >= new Date()) {
+      post(`${serverUrl}/donations`, {
+        title,
+        image,
+        donation: minimumDonation,
+        date,
+        name,
+        email,
+      }).then(res => console.log(res));
+    } else {
+      console.log('Date Expired!');
+    }
   };
 
   return (

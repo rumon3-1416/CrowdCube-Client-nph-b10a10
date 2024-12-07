@@ -1,9 +1,12 @@
 import React from 'react';
+import Lottie from 'lottie-react';
+
+import loadingHand from './loadingHand.json';
 
 const Loading = () => {
   return (
     <div className="w-full min-h-[50vh] flex justify-center items-center">
-      <h2 className="text-3xl font-semibold">Loading...</h2>
+      <Lottie animationData={loadingHand} />
     </div>
   );
 };

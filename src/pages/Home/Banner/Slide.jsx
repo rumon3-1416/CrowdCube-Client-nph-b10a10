@@ -24,7 +24,7 @@ const Slide = ({ data }) => {
               .getElementById('campaigns')
               ?.scrollIntoView({ behavior: 'smooth' })
           }
-          className="bg-coral2 text-lg px-6 py-2 mt-6 rounded-full font-medium"
+          className="bg-coral2 hover:bg-teal text-lg px-6 py-2 mt-6 rounded-full font-medium"
         >
           {ctaText}
         </button>
