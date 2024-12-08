@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -57,6 +57,10 @@ const AddCampaign = () => {
         })
       );
   };
+
+  useEffect(() => {
+    document.title = 'Add Campaign | CrowdCube';
+  }, []);
 
   return (
     <div className="bg-tealBg pt-8 pb-24">

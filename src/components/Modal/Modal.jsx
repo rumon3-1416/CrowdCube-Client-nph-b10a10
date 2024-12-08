@@ -23,7 +23,7 @@ const Modal = ({ property, children }) => {
       >
         <img className="w-16" src={modalIcon || successIcon} alt="" />
         <h2
-          className={`text-2xl font-bold mt-6 mb-4 ${
+          className={`text-2xl md:text-3xl font-bold text-center mt-6 mb-4 ${
             darkTheme ? 'text-gray-200' : 'text-dark3'
           }`}
         >

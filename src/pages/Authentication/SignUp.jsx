@@ -69,7 +69,7 @@ const SignUp = () => {
               setModal({
                 show: true,
                 res: 'success',
-                title: 'Register Success',
+                title: 'Register Successful',
               });
               e.target.reset();
             })
@@ -92,7 +92,7 @@ const SignUp = () => {
     )
       .then(() => {
         setErrMessage(null);
-        setModal({ show: true, res: 'success', title: 'Register Success' });
+        setModal({ show: true, res: 'success', title: 'Register Successful' });
       })
       .catch(err => {
         setErrMessage(err.message);

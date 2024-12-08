@@ -29,6 +29,8 @@ const UpdateCampaign = () => {
     : 'bg-light2 text-gray-800';
 
   useEffect(() => {
+    document.title = 'Update Campaign | CrowdCube';
+
     get(`${serverUrl}/campaigns/${id}`).then(data => {
       setCampaign(data);
       setStartDate(new Date(data.deadline));

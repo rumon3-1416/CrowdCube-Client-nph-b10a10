@@ -19,6 +19,8 @@ const MyCampaigns = () => {
   const { darkTheme, serverUrl, user } = useContext(AuthContext);
 
   useEffect(() => {
+    document.title = 'My Campaigns | CrowdCube';
+
     get(`${serverUrl}/campaigns?user_email=${user.email}`).then(
       data => data && setCampaigns(data)
     );

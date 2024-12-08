@@ -40,7 +40,7 @@ const SignIn = () => {
     emailPassSignIn(email, password)
       .then(() => {
         setErrMessage(null);
-        setModal({ show: true, res: 'success', title: 'Log In Success' });
+        setModal({ show: true, res: 'success', title: 'Log In Successful' });
       })
       .catch(err => {
         setErrMessage(err.message);
@@ -58,7 +58,7 @@ const SignIn = () => {
     )
       .then(() => {
         setErrMessage(null);
-        setModal({ show: true, res: 'success', title: 'Log In Success' });
+        setModal({ show: true, res: 'success', title: 'Log In Successful' });
       })
       .catch(err => {
         setErrMessage(err.message),

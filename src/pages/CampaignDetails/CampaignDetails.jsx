@@ -40,10 +40,10 @@ const CampaignDetails = () => {
       }).then(
         res =>
           res.acknowledged &&
-          setModal({ show: true, res: 'success', title: 'Donation Success' })
+          setModal({ show: true, res: 'success', title: 'Donation Successful' })
       );
     } else {
-      setModal({ show: true, res: 'error', title: 'Deadline Passed' });
+      setModal({ show: true, res: 'error', title: 'Deadline has Passed!' });
     }
   };
 
