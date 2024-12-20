@@ -5,6 +5,7 @@ import { AuthContext } from '../../features/AuthProvider';
 import CampaignRow from './CampaignRow';
 import { del, get } from '../../services/api';
 import Modal from '../../components/Modal/Modal';
+import axios from 'axios';
 
 const MyCampaigns = () => {
   const [campaigns, setCampaigns] = useState([]);
@@ -21,9 +22,15 @@ const MyCampaigns = () => {
   useEffect(() => {
     document.title = 'My Campaigns | CrowdCube';
 
-    get(`${serverUrl}/campaigns?user_email=${user.email}`).then(
-      data => data && setCampaigns(data)
-    );
+    // get(`${serverUrl}/campaigns?user_email=${user.email}`).then(
+    //   data => data && setCampaigns(data)
+    // );
+
+    axios
+      .get(`${serverUrl}/campaigns?user_email=${user.email}`, {
+        withCredentials: true,
+      })
+      .then(res => res.data && setCampaigns(res.data));
   }, [serverUrl, user]);
 
   const handleDelete = id => {
