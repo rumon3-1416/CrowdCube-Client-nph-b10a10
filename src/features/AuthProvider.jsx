@@ -11,8 +11,8 @@ const AuthProvider = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
-  // const serverUrl = 'https://a10-server-eta.vercel.app';
-  const serverUrl = 'http://localhost:5000';
+  const serverUrl = import.meta.env.VITE_serverUrl;
+  // const serverUrl = 'http://localhost:5000';
 
   // On Auth State Changed
   useEffect(() => {
