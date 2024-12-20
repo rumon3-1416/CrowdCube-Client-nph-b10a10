@@ -11,11 +11,12 @@ const AuthProvider = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
-  const serverUrl = import.meta.env.VITE_serverUrl;
-  // const serverUrl = 'http://localhost:5000';
+  // const serverUrl = import.meta.env.VITE_serverUrl;
+  const serverUrl = 'http://localhost:5000';
 
   // On Auth State Changed
   useEffect(() => {
+    setIsLoading(true);
     const unSubscribe = onAuthStateChanged(auth, currUser => {
       currUser ? setUser(currUser) : setUser(null);
 
@@ -26,13 +27,11 @@ const AuthProvider = ({ children }) => {
             { user: currUser.email },
             { withCredentials: true }
           )
-          .then(res => console.log(res.data));
-
-        setIsLoading(false);
+          .then(() => setIsLoading(false));
       } else {
-        console.log(currUser);
-
-        setIsLoading(false);
+        axios
+          .post(`${serverUrl}/logout`, {}, { withCredentials: true })
+          .then(() => setIsLoading(false));
       }
     });
 

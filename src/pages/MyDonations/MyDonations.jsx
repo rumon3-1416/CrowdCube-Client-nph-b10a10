@@ -3,6 +3,7 @@ import { get } from '../../services/api';
 import { AuthContext } from '../../features/AuthProvider';
 import MainLayout from '../../layouts/MainLayout';
 import DonationCard from './DonationCard';
+import axios from 'axios';
 
 const MyDonations = () => {
   const [donations, setDonations] = useState([]);
@@ -12,9 +13,15 @@ const MyDonations = () => {
   useEffect(() => {
     document.title = 'My Donations | CrowdCube';
 
-    get(`${serverUrl}/donations?user_email=${user.email}`).then(data =>
-      setDonations(data)
-    );
+    // get(`${serverUrl}/donations?user_email=${user.email}`).then(data =>
+    //   setDonations(data)
+    // );
+
+    axios
+      .get(`${serverUrl}/donations?user_email=${user.email}`, {
+        withCredentials: true,
+      })
+      .then(res => res.data && setDonations(res.data));
   }, [serverUrl, user]);
 
   return (
