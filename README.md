@@ -15,6 +15,14 @@ Welcome to **Crowdcube**, a crowdfunding platform where users can raise money fo
 - **View Donation History:** Track all your donations in one convenient place.
 - **Dark/Light Theme Support:** Choose between themes for a personalized browsing experience.
 
+## Technologies Used
+
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: Firebase Authentication
+- **Payments**: Stripe
+
 ## Run Locally
 
 This is a React.js project built with Vite, Tailwind CSS, and various dependencies. Follow the steps below to set up and run the project locally.
